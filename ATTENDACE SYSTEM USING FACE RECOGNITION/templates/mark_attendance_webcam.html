@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Attendance with Webcam</title>
+    <style>
+        body {
+            background-image: url(/static/fr.jpeg.jpg);
+            background-size: cover;
+        }
+
+        h1 {
+            border: 10px solid rgb(5, 149, 218);
+            background-color: rgb(5, 149, 218);
+            text-align: center;
+        }
+
+        #video_feed {
+            border: 5px solid black;
+            margin-left: 28%;
+        }
+
+        button {
+            background-color:rgb(7, 111, 159);
+            border:5px slod black;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            display: inline;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: rgba(118, 199, 237, 0.999);
+        }
+
+        #capture_button {
+            margin-left: 43%;
+        }
+
+        form {
+            margin-left: 47%;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>Mark Attendance with Webcam</h1>
+    <div id="video_container">
+        <img id="video_feed" src="{{ url_for('video_feed') }}" width="640" height="480">
+    </div>
+    <button id="capture_button">MARK ATTENDANCE</button>
+
+    <script src="/static/mark_attendance.js"></script>
+
+                <form action="/home" method="post">
+                    <button type="home" id="home" name="home">HOME</button></form>
+            <br><br><br>
+        </div>
+</body>
+</html>

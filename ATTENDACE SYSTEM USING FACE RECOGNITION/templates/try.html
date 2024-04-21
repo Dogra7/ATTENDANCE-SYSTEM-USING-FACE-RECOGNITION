@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Attendance with Webcam</title>
+    <style>
+        #video-container {
+            margin: auto;
+            width: 50%;
+        }
+
+        #capture-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mark Attendance with Webcam</h1>
+    <div id="video_container">
+        <img id="video_feed" src="{{ url_for('video_feed') }}" width="640" height="480">
+        <button id="capture_button">Capture</button>
+    </div>
+    
+    <script>
+        // Function to handle the button click event
+        document.getElementById('capture_button').addEventListener('click', function() {
+            // Send an AJAX request to the server to fetch the recognized face name
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', '/get_recognized_face_name', true);
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    var recognizedName = response.recognized_face_name;
+                    // Display the recognized face name in an alert box
+                    alert("Identified person: " + recognizedName);
+                    
+                    // Send an AJAX request to the server to store the recognized face name in the database
+                    var xhrStore = new XMLHttpRequest();
+                    xhrStore.open('GET', '/store_recognized_face', true);
+                    xhrStore.onload = function () {
+                        if (xhrStore.status === 200) {
+                            var responseStore = JSON.parse(xhrStore.responseText);
+                            alert(responseStore.message);
+                        } else {
+                            alert('Failed to store in the database.');
+                        }
+                    };
+                    xhrStore.send();
+                } else {
+                    alert('Request failed. Please try again later.');
+                }
+            };
+            xhr.send();
+        });
+    </script>
+                <form action="/home" method="post">
+                    <button type="home" id="home" name="home">HOME</button></form>
+            <br><br><br>
+        </div>
+</body>
+</html>

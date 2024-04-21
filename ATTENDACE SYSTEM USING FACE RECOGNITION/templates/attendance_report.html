@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Report</title>
+   <link rel="stylesheet" href="/static/report.css">
+</head>
+<body>
+    <h1>ATTENDANCE RECORD</h1>
+    <table class="attendance-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Date&Time</th>
+                <th>Day</th>
+            </tr>
+        </thead>        
+        <tbody>
+            {% for record in attendance_records %}
+            <tr>
+                <td>{{ record[0]}}</td>
+                <td>{{ record[1]}}</td>
+                <td>{{ record[2]}}</td>
+                <td>{{record[3]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <form action="/home" method="post">
+        <button type="home" id="home" name="home">HOME</button></form>
+<br><br><br>
+</div>
+</body>
+</html>

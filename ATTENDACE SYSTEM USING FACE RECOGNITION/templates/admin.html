@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Face</title>
+    <link rel="stylesheet" href="/static/index.css">
+</head>
+<body>
+    <div class="title"><h1>ADD NEW FACES FOR ATTENDANCE</h1></div>
+    <div class="main">
+        
+        
+    
+    <form action="/add_face" method="post" enctype="multipart/form-data">
+        <h3>UPLOAD IMAGE :</h3>
+        <input type="file" name="image" id="image" accept="image/*" required>
+        <br><br><br>
+        <div class="btn">
+        <button type="submit">Add Face</button>
+        <br><br></form>
+        <form action="/home" method="post">
+        <button type="home" id="home" name="home">HOME</button></form>
+        <br><br><br>  
+        
+        </div>
+    
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATTENDANCE SYSTEM USING FACE RECOGNITION</title>
+    <link rel="stylesheet" href="/static/index.css">
+</head>
+<body>
+    <div class = "title">
+        <h1>ATTENDANCE SYSTEM USING FACE RECOGNITION</h1>
+    </div>
+    <div class ="home" >
+        <div class="main">
+            <br>
+
+            <div class="btn">
+                
+                <br><br>
+                
+                <form action="/mark_attendance" method="post">
+                <button type="submit" id="attendance" name="attendance">MARK ATTENDANCE</button>
+                <br><br>
+                </form>
+                <br>
+                <form action="/attendance_report" method="post">
+
+                <button type="submit" name="report">ATTENDANCE REPORT</button>
+                <br><br><br>
+            </form>
+            <form action="/login" method="post">
+
+                <button type="submit" name="admin">ADMIN</button>
+            </form>
+        <br><br><br>
+    </div>
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+/* Body styles */
+body{
+  background-image: url("a.jpg");
+  background-size: cover;
+  font-family: Arial, sans-serif; /* Use a common font family for better compatibility */
+}
+
+/* Heading styles */
+h1 {
+  margin-top: 2%;
+  margin-left: 1%;
+  width: 98%;
+  height: 10%;
+  text-align: center;
+  border-radius: 12px;
+  border: 1px solid rgb(88, 145, 194);
+  background-color: rgb(88, 145, 194);
+}
+
+/* Table styles */
+table {
+  margin: 0 auto;
+  background-color: aliceblue;
+  width: 70%;
+  border-collapse: collapse;
+  margin-top: 20px; /* Add some spacing above the table */
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 10px; /* Increase padding for better readability */
+  text-align: left;
+}
+
+/* Header row styles */
+table th {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+/* Alternating row colors */
+table tr:nth-child(even) {
+  background-color: #f9f9f9; /* Lighter color for even rows */
+}
+
+/* Hover effect */
+table tr:hover {
+  background-color: #e0e0e0; /* Light gray background on hover */
+}
+
+
+/* Button styles */
+button {
+  display: block; /* Make the button a block-level element */
+  margin: 20px auto; /* Center the button horizontally */
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Green color for buttons */
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #45a049; /* Darker green color on hover */
+}
